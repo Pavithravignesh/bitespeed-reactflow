@@ -15,7 +15,7 @@ const TourContent: React.FC = () => {
     };
 
     return (
-        <div className="fixed top-3 left-150 z-50">
+        <div className="fixed top-2 right-70 z-50">
             <button
                 onClick={startTour}
                 className="flex items-center gap-2 bg-[#FFAD5E] text-white px-4 py-2 rounded-lg shadow-lg hover:bg-[#e69c4d] transition-colors duration-200"
