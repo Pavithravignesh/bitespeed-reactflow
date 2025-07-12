@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./NavBar";
+import NavBar from "./NavBar";
 import UpdateNode from "./UpdateNode";
 import Sidebar from "./SideBar";
 import type { RightBarProps } from "../types/rightBar";
@@ -13,7 +13,7 @@ const RightBar: React.FC<RightBarProps> = ({
     saveCanvas,
 }) => (
     <div className="rightbar">
-        <Navbar saveCanvas={saveCanvas} />
+        <NavBar saveCanvas={saveCanvas} />
         {nodeSelected ? (
             <UpdateNode
                 selectedNode={changeNode!}
