@@ -22,6 +22,8 @@ import "./App.css";
 import ReactFlowCanvas from "./components/ReactFlowCanvas";
 import type { UpdateNodeType } from "./types/updateNode";
 import React from "react";
+import RightBar from "./components/RightBar";
+import DownloadBtn from "./components/DownloadBtn";
 
 let nodeId = 0;
 
@@ -142,7 +144,7 @@ const App = () => {
   }, []);
 
   // fn to save the node flow with some vaildtion on their connection
-  const saveFlow = () => {
+  const saveCanvas = () => {
     if (!reactFlowInstance) return;
 
     const nodes = reactFlowInstance.getNodes();
@@ -153,6 +155,7 @@ const App = () => {
       edges.some(edge => edge.source === node.id || edge.target === node.id)
     );
 
+    // checking is there any node left without any connection
     if (!allConnected) {
       setErrorText("Each node must have at least one connection.");
       setTextColor("redMessage");
@@ -184,7 +187,17 @@ const App = () => {
           errorText={errorText}
           textColor={textColor}
         />
+        <RightBar
+          nodeSelected={nodeSelected}
+          changeNode={changeNode}
+          setNodeSelected={setNodeSelected}
+          setNodes={setNodes as any}
+          saveCanvas={saveCanvas}
+        />
+        {/* 3 */}
+        <DownloadBtn />
       </ReactFlowProvider>
+
     </div>
   );
 };
