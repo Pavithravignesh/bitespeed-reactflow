@@ -154,17 +154,17 @@ const App = () => {
     // checking is there any node left without any connection
     if (!allConnected) {
       setErrorText("Each node must have at least one connection.");
-      setTextColor("redMessage");
+      setTextColor("errorMessage");
       setTimeout(() => setErrorText(undefined), 5000);
     } else {
       setErrorText("Saved Flow");
-      setTextColor("greenMessage");
+      setTextColor("successMessage");
       setTimeout(() => setErrorText(undefined), 5000);
     }
   };
 
   return (
-    <div className="appflow" style={{ width: "100vw", height: "100vh" }}>
+    <div className="main-flow" style={{ width: "100vw", height: "100vh" }}>
       <ReactFlowProvider>
         <ReactFlowCanvas
           nodes={nodes}

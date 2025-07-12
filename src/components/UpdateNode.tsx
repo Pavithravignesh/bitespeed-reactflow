@@ -43,8 +43,8 @@ const UpdateNode: React.FC<UpdateNodeProps> = ({
 
     return (
         <>
-            <div className="update">
-                <div className="back">
+            <div className="py-[5px] px-[15px] text-xs bg-white text-lightgray flex flex-col">
+                <div className="flex items-center justify-start">
                     <span
                         className="material-symbols-outlined"
                         style={{ marginRight: 10, cursor: "pointer", color: "#62646b" }}
@@ -57,7 +57,7 @@ const UpdateNode: React.FC<UpdateNodeProps> = ({
             </div>
             <div style={{ width: `100%`, height: 2, background: "rgb(214, 212, 212)" }}></div>
 
-            <div className="update">
+            <div className="py-[5px] px-[15px] text-xs bg-white text-lightgray flex flex-col">
                 <h3>Text</h3>
                 <textarea
                     rows={4}

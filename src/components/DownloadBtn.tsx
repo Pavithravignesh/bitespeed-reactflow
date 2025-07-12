@@ -16,9 +16,6 @@ const imageHeight = 768;
 const DownloadBtn: React.FC = () => {
     const { getNodes } = useReactFlow();
     const onClick = (): void => {
-        // we calculate a transform for the nodes so that all nodes are visible
-        // we then overwrite the transform of the `.react-flow__viewport` element
-        // with the style option of the html-to-image library
         const nodes = getNodes() as Node[];
         const nodesBounds = getRectOfNodes(nodes);
         const transform = getTransformForBounds(nodesBounds, imageWidth, imageHeight, 0.5, 2);
@@ -40,7 +37,7 @@ const DownloadBtn: React.FC = () => {
 
     return (
         <Panel position="top-left">
-            <button className="download-btn" onClick={onClick}>
+            <button className="text-sm font-light" onClick={onClick}>
                 Download Image
             </button>
         </Panel>

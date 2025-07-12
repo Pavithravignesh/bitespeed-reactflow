@@ -10,7 +10,7 @@ const PopUp: React.FC<PopUpProps> = ({ errorText, textColor }) => {
         return <div className={textColor}>{errorText}</div>;
     }
     // If there is no errorText, render an empty div
-    return <div className="savingChanges" style={{ padding: 19 }}></div>;
+    return <div style={{ padding: 19 }}></div>;
 };
 
 export default PopUp;
