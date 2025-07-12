@@ -40,6 +40,7 @@
 - **🔗 Smart Connections** - Automatic edge connections with arrow markers
 - **💾 Flow Validation** - Ensures all nodes are properly connected before saving
 - **📸 Export to PNG** - Download your workflow as a high-quality image
+- **🎯 Interactive Tour** - Guided walkthrough for new users with step-by-step instructions
 
 ### 🎨 User Experience
 <!-- - **📱 Fully Responsive** - Works seamlessly on mobile, tablet, and desktop -->
@@ -47,6 +48,7 @@
 - **⚡ Real-time Updates** - Instant visual feedback for all interactions
 - **🔍 Node Selection** - Click nodes to edit their content
 - **💬 Interactive Messages** - Edit message content with real-time preview
+- **🎯 Onboarding Tour** - Floating tour button for guided learning experience
 
 ### 🛡️ Technical Excellence
 - **🔒 Type Safety** - Full TypeScript implementation
@@ -60,11 +62,12 @@
 
 ### 🎯 How It Works
 
-1. **🎨 Create Nodes**: Drag message nodes from the sidebar to the canvas
-2. **🔗 Connect Flows**: Connect nodes by dragging from source to target handles
-3. **✏️ Edit Content**: Click any node to edit its message content
-4. **💾 Save Workflow**: Click "Save Work" to validate and save your flow
-5. **📸 Export**: Download your workflow as a PNG image
+1. **🎯 Start Tour**: Click the floating tour button to begin guided learning
+2. **🎨 Create Nodes**: Drag message nodes from the sidebar to the canvas
+3. **🔗 Connect Flows**: Connect nodes by dragging from source to target handles
+4. **✏️ Edit Content**: Click any node to edit its message content
+5. **💾 Save Workflow**: Click "Save Work" to validate and save your flow
+6. **📸 Export**: Download your workflow as a PNG image
 
 ### 🎨 Visual Features
 
@@ -97,6 +100,7 @@
 ### 🔄 Workflow Engine
 - **ReactFlow 11.11.3** - Powerful workflow builder library
 - **HTML-to-Image 1.11.11** - PNG export functionality
+- **@reactour/tour 3.8.0** - Interactive guided tour functionality
 
 ### 🛠️ Development Tools
 - **ESLint 9.30.1** - Code quality and consistency
@@ -161,7 +165,8 @@ bitespeed-reactflow/
 │   │   ├── ReactFlowCanvas.tsx     # Main canvas wrapper
 │   │   ├── RightBar.tsx            # Sidebar with node editor
 │   │   ├── SideBar.tsx             # Draggable node sidebar
-│   │   └── UpdateNode.tsx          # Node content editor
+│   │   ├── UpdateNode.tsx          # Node content editor
+│   │   └── WorkflowTour.tsx        # Interactive guided tour component
 │   ├── 🎯 types/
 │   │   ├── actualNode.ts           # Node type definitions
 │   │   ├── navBar.ts               # NavBar props interface
@@ -183,6 +188,51 @@ bitespeed-reactflow/
 
 ---
 
+## 🎯 Interactive Tour Feature
+
+### 🚀 **Guided Learning Experience**
+
+The Workflow Builder includes a comprehensive interactive tour that helps new users understand how to use the application effectively.
+
+#### 🎯 **Tour Features:**
+- **🎯 Floating Tour Button** - Always accessible in the top-right corner
+- **📱 Responsive Design** - Adapts to mobile and desktop screens
+- **🎨 Custom Styling** - Matches your brand colors (#FFAD5E)
+- **📋 10-Step Guide** - Covers all major features and interactions
+- **🔄 Persistent State** - Remembers if user has completed the tour
+
+#### 🎨 **Tour Steps Include:**
+1. **🎯 Welcome** - Introduction to the workflow builder
+2. **📦 Node Library** - How to use the draggable nodes
+3. **💬 Message Nodes** - Understanding node types
+4. **🎨 Canvas Navigation** - How to navigate the workspace
+5. **🎛️ Controls** - Using zoom, pan, and fit view
+6. **⚙️ Node Editor** - Editing node content
+7. **💾 Save Workflow** - Validation and saving
+8. **🔗 Connections** - Understanding node connections
+9. **📸 Export** - Downloading workflow images
+10. **🎉 Completion** - Summary and next steps
+
+#### 🎨 **Tour Styling:**
+```typescript
+// Custom tour styling with brand colors
+styles={{
+  popover: (base) => ({
+    ...base,
+    borderRadius: '12px',
+    boxShadow: '0 10px 25px rgba(0,0,0,0.15)',
+    border: '2px solid #FFAD5E',
+  }),
+  badge: (base) => ({
+    ...base,
+    background: '#FFAD5E',
+    color: 'white',
+  }),
+}}
+```
+
+---
+
 ## 🎨 Components Overview
 
 ### 🎯 Core Components
@@ -194,6 +244,7 @@ bitespeed-reactflow/
 | **SideBar** | Node library | Draggable message nodes |
 | **RightBar** | Node editor | Content editing, save functionality |
 | **DownloadBtn** | Export feature | PNG export with custom sizing |
+| **WorkflowTour** | Guided tour | Interactive onboarding, step-by-step instructions |
 
 ### 🎨 UI Components
 

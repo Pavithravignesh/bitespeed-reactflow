@@ -12,7 +12,7 @@ const RightBar: React.FC<RightBarProps> = ({
     setNodes,
     saveCanvas,
 }) => (
-    <div className="flex flex-col bg-white w-[20%] border-l border-[rgb(214,212,212)]">
+    <div className="rightbar flex flex-col bg-white w-[20%] border-l border-[rgb(214,212,212)]">
         <NavBar saveCanvas={saveCanvas} />
         {nodeSelected ? (
             <UpdateNode

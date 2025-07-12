@@ -20,6 +20,7 @@ import type { UpdateNodeType } from "./types/updateNode";
 import React from "react";
 import RightBar from "./components/RightBar";
 import DownloadBtn from "./components/DownloadBtn";
+import WorkflowTour from "./components/WorkflowTour";
 
 let nodeId = 0;
 
@@ -172,37 +173,38 @@ const App = () => {
   };
 
   return (
-    <div className="main-flow" style={{ width: "100vw", height: "100vh" }}>
-      <ReactFlowProvider>
-        <ReactFlowCanvas
-          nodes={nodes}
-          edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          onConnect={onConnect}
-          onInit={setReactFlowInstance}
-          onDrop={onDrop}
-          onDragOver={onDragOver}
-          fitView
-          proOptions={proOptions}
-          onNodeClick={nodeUpdate}
-          nodeTypes={nodeTypes}
-          wrapper={wrapper}
-          errorText={errorText}
-          textColor={textColor}
-        />
-        <RightBar
-          nodeSelected={nodeSelected}
-          changeNode={changeNode}
-          setNodeSelected={setNodeSelected}
-          setNodes={setNodes as any}
-          saveCanvas={saveCanvas}
-        />
-        {/* 3 */}
-        <DownloadBtn />
-      </ReactFlowProvider>
-
-    </div>
+    <WorkflowTour>
+      <div className="main-flow" style={{ width: "100vw", height: "100vh" }}>
+        <ReactFlowProvider>
+          <ReactFlowCanvas
+            nodes={nodes}
+            edges={edges}
+            onNodesChange={onNodesChange}
+            onEdgesChange={onEdgesChange}
+            onConnect={onConnect}
+            onInit={setReactFlowInstance}
+            onDrop={onDrop}
+            onDragOver={onDragOver}
+            fitView
+            proOptions={proOptions}
+            onNodeClick={nodeUpdate}
+            nodeTypes={nodeTypes}
+            wrapper={wrapper}
+            errorText={errorText}
+            textColor={textColor}
+          />
+          <RightBar
+            nodeSelected={nodeSelected}
+            changeNode={changeNode}
+            setNodeSelected={setNodeSelected}
+            setNodes={setNodes as any}
+            saveCanvas={saveCanvas}
+          />
+          {/* 3 */}
+          <DownloadBtn />
+        </ReactFlowProvider>
+      </div>
+    </WorkflowTour>
   );
 };
 
