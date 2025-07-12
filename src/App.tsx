@@ -8,12 +8,8 @@ import {
 import type {
   ReactFlowInstance,
   Node,
-  Edge,
   Connection,
   OnConnect,
-  OnNodesChange,
-  OnEdgesChange,
-  OnInit,
   MarkerType,
 } from "reactflow";
 import "reactflow/dist/style.css";
@@ -34,7 +30,7 @@ const App = () => {
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
   // to track the new created target edge 
-  const [targetTrack, setTargetTrack] = useState<string[]>([]);
+  const [, setTargetTrack] = useState<string[]>([]);
 
   // react-flow instance
   const [reactFlowInstance, setReactFlowInstance] = useState<ReactFlowInstance | null>(null);
@@ -138,7 +134,7 @@ const App = () => {
   );
 
   // fn to handle node updating
-  const nodeUpdate = useCallback((event: React.MouseEvent, node: Node) => {
+  const nodeUpdate = useCallback((_: React.MouseEvent, node: Node) => {
     setChangeNode(node as UpdateNodeType);
     setNodeSelected(true);
   }, []);
