@@ -21,8 +21,8 @@ const ReactFlowCanvas: React.FC<ReactFlowCanvasProps> = ({
     errorText,
     textColor,
 }) => (
-    <div className="reactflow-wrapper" ref={wrapper}>
-        <div className="topbar">
+    <div className="wrokflow-wrapper" ref={wrapper}>
+        <div className="text-xs bg-[#EDEFE7] p-3 flex flex-grow justify-center">
             <PopUp errorText={errorText} textColor={textColor} />
         </div>
         <ReactFlow
