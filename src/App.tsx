@@ -113,6 +113,14 @@ const App = () => {
 
     if (duplication) return;
 
+    // Check if source node already has an outgoing connection
+    const sourceHasOutgoingEdge = edges.find((edge) => edge.source === params.source);
+    if (sourceHasOutgoingEdge) {
+      // Source node already has an outgoing connection, prevent new connection
+      console.log("Source node already has an outgoing connection");
+      return;
+    }
+
     // we can have more than one source edge can connects to target edge by using setEdges 
     setEdges((edge) => addEdge({ ...params, markerEnd: { type: "arrowclosed" as MarkerType } }, edge));
 
